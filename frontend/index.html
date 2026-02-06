@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style AI | Premium Fashion Recommendations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Style AI</h1>
+            <p class="subtitle">Curated Intelligence for Your Wardrobe</p>
+        </header>
+
+        <main class="main-grid">
+            <!-- Left Column: Input Form -->
+            <section class="input-section glass-card">
+                <form id="styleForm">
+                    <!-- Image Upload -->
+                    <div class="input-group">
+                        <label>Your Photo</label>
+                        <div class="upload-zone" id="dropZone">
+                            <input type="file" name="file" id="fileInput" accept="image/*" class="hidden" required>
+                            <span class="upload-icon">📷</span>
+                            <p id="uploadText" style="color: var(--text-muted);">Click or Drag & Drop</p>
+                            <img id="imagePreview" class="file-preview" alt="Preview">
+                        </div>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <div class="select-wrapper">
+                            <select name="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Occasion -->
+                    <div class="input-group">
+                        <label>Occasion</label>
+                        <div class="select-wrapper">
+                            <select name="occasion" required>
+                                <option value="Casual">Casual</option>
+                                <option value="Formal">Formal</option>
+                                <option value="Party">Party</option>
+                                <option value="Traditional">Traditional</option>
+                                <option value="Business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Region -->
+                    <div class="input-group">
+                        <label>Region</label>
+                        <input type="text" name="region" value="India" list="regions" required>
+                        <datalist id="regions">
+                            <option value="India">
+                            <option value="USA">
+                            <option value="UK">
+                            <option value="Europe">
+                            <option value="East Asia">
+                            <option value="Middle East">
+                        </datalist>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-luxury" id="submitBtn">
+                        <span id="btnText">Generate Analysis</span>
+                    </button>
+                    <!-- Reset Button (Small link look below) -->
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <span id="resetBtn"
+                            style="color: var(--text-muted); cursor: pointer; font-size: 0.85rem; text-decoration: underline;">Reset
+                            Form</span>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Right Column: Results -->
+            <section id="results-section" class="results-section hidden">
+                <div class="results-grid">
+
+                    <!-- Skin Analysis -->
+                    <div class="glass-card result-card" style="grid-column: 1 / -1;">
+                        <h3>Skin Analysis</h3>
+                        <div id="skinContent">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </div>
+
+                    <!-- Recommended Colors -->
+                    <div class="glass-card result-card">
+                        <h3>Recommended Palette</h3>
+                        <div id="colorsContent" class="swatch-container">
+                            <!-- Dynamic Swatches -->
+                        </div>
+                    </div>
+
+                    <!-- Outfit Suggestions -->
+                    <div class="glass-card result-card">
+                        <h3>The Look</h3>
+                        <div id="outfitContent">
+                            <!-- Dynamic Suggestions -->
+                        </div>
+                    </div>
+
+                    <!-- Accessories -->
+                    <div class="glass-card result-card">
+                        <h3>Accessories</h3>
+                        <div id="accessoriesContent">
+                            <!-- Dynamic List -->
+                        </div>
+                    </div>
+
+                    <!-- Explanation -->
+                    <div class="glass-card result-card"
+                        style="grid-column: 1 / -1; background: rgba(212, 175, 55, 0.05); border-color: var(--primary-accent);">
+                        <h3>Style Notes</h3>
+                        <p id="explanationContent" style="line-height: 1.6; font-style: italic;"></p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
